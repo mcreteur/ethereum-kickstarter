@@ -1,0 +1,37 @@
+{
+  "name": "ethereum-kickstarter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "solhint 'contracts/**/*.sol'",
+    "prettier:solidity": "prettier --write contracts/**/*.sol"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^1.4.3",
+    "@typechain/truffle-v5": "^5.0.0",
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.6.2",
+    "dotenv": "^10.0.0",
+    "husky": "^7.0.1",
+    "prettier": "^2.3.2",
+    "prettier-plugin-solidity": "^1.0.0-beta.17",
+    "solhint": "^3.3.6",
+    "truffle": "^5.4.6",
+    "ts-node": "^10.2.1",
+    "typechain": "^5.1.2",
+    "typescript": "^4.3.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run prettier:solidity && npm run lint"
+    }
+  }
+}
