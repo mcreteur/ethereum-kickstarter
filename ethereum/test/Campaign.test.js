@@ -31,6 +31,15 @@ contract('Campaign', (accounts) => {
     campaign = await Campaign.new('100', accounts[0]);
   });
 
+  it('allows to get campaign summary', async () => {
+    const summary = await campaign.getSummary();
+    assert.equal(summary[0], 100);
+    assert.equal(summary[1], 0);
+    assert.equal(summary[2], 0);
+    assert.equal(summary[3], 0);
+    assert.equal(summary[4], accounts[0]);
+  })
+
   it('allows people to contribute money and marks them as approvers', async () => {
     await campaign.contribute({ from: accounts[1], value:  '100'});
     const isContributor = await campaign.approvers(accounts[1]);

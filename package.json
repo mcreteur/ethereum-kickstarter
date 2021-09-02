@@ -7,9 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "solhint 'contracts/**/*.sol'",
-    "prettier:solidity": "prettier --write contracts/**/*.sol"
+    "prettier:solidity": "prettier --write contracts/**/*.sol",
+    "dev": "next"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +19,7 @@
     "@types/chai": "^4.2.21",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.6.2",
+    "@types/react": "^17.0.19",
     "dotenv": "^10.0.0",
     "husky": "^7.0.1",
     "prettier": "^2.3.2",
@@ -33,5 +34,14 @@
     "hooks": {
       "pre-push": "npm run prettier:solidity && npm run lint"
     }
+  },
+  "dependencies": {
+    "dotenv-webpack": "^7.0.3",
+    "next": "^11.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.3",
+    "web3": "^1.5.2"
   }
 }
